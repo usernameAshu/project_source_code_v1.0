@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+<!--    <appender name="FLUENT_APPENDER"
+        class="com.fastretailing.dcp.common.api.log.OmsFluentAppenderWithJsonLayout">
+        <remoteHost>${fluentd_host}</remoteHost>
+        <port>${fluentd_port}</port>
+        <tag>${fluentd_tag}</tag>
+        <includeThreadName>true</includeThreadName>
+        <includeLoggerName>false</includeLoggerName>
+        <includeFormattedMessage>true</includeFormattedMessage>
+        <includeMessage>false</includeMessage>
+        <includeException>true</includeException>
+    </appender>
+
+    <logger name="com.fastretailing.dcp" level="${APP_LOG_LEVEL:-INFO}" />
+    <root level="${APP_LOG_LEVEL:-INFO}">
+        <appender-ref ref="FLUENT_APPENDER" />
+    </root>-->
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <root level="debug">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>
